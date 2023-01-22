@@ -15,9 +15,9 @@ Including another URLconf
 """
 from django.contrib import admin
 # импорт include позволит использовать адреса, включенные в приложения
-from django.urls import include, path 
+from django.urls import include, path
 
-urlpatterns = [    
-    path('', include('posts.urls')),
+urlpatterns = [
+    path('', include(('posts.urls', 'posts'), namespace='posts')),
     path('admin/', admin.site.urls),
 ]
